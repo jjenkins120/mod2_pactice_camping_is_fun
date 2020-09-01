@@ -1,0 +1,8 @@
+<h1><%= @activity.name %><h1>
+<h2><%= @activity.difficulty %><h2>
+
+<ul>
+<% @activity.campers.each do |camper_instance|%>
+<li><%= link_to camper_instance.name, camper_path(camper_instance.id) %>
+<% end%>
+</ul>

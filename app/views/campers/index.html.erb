@@ -2,6 +2,12 @@
 
 <ul>
   <% @campers.each do |camper| %>
-    <li><%= camper.name %></li>
+    <li><%= link_to camper.name, camper_path(camper) %></li>
   <% end %>
 </ul>
+
+<ol>Top 5 most active campers:
+<% Camper.most_active_five.each do |camper| %>
+<li><%= link_to camper.name, camper_path(camper) %>
+<% end %>
+</ol>

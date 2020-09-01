@@ -1,0 +1,17 @@
+<h1><%= @camper.name %></h1>
+<h2><%= @camper.age %></h2>
+
+<ul>
+<% @camper.activities.each do |activity_instance|%>
+<li><%= link_to activity_instance.name, activity_path(activity_instance.id) %>
+<% end%>
+</ul>
+
+
+<ol>
+My Top 3 activities<% @camper.top_three_activities.each do |i| %>
+<li><%= i.name %>
+<% end%>
+</ol>
+
+<%= link_to "Go back to all campers", campers_path %>
